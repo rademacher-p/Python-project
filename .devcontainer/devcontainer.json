@@ -17,7 +17,7 @@
 
 	// Uncomment the next line to run commands after the container is created.
 	// "postCreateCommand": "cat /etc/os-release",
-	"postCreateCommand": "python -m pip install -e .[dev,extras]",
+	"postCreateCommand": "python -m pip install -e .[dev]",
 
 	"runArgs": [
 		"--rm",

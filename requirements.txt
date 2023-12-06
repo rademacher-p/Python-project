@@ -1,8 +1,9 @@
+numpy
+
 # extras
 tensorboard
 torch-tb-profiler
-PyQt5
-gymnasium
+PyQt6
 tqdm
 types-tqdm
 PyYAML
