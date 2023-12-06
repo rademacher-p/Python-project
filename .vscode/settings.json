@@ -1,0 +1,69 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true,
+        // "editor.formatOnType": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            // "source.fixAll": true,
+        },
+        "editor.rulers": [
+            88
+        ],
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "mypy-type-checker.preferDaemon": false,
+    "python.testing.pytestEnabled": true,
+    //
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-shell-escape", // TODO: .latexmkrc config?
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
+    ],
+    "ltex.latex.environments": {
+        "lstlisting": "ignore",
+        "verbatim": "ignore",
+        "IEEEeqnarray": "ignore",
+        "IEEEeqnarray*": "ignore",
+        "IEEEkeywords": "ignore",
+    },
+    "ltex.latex.commands": {
+        "\\label{}": "ignore",
+        "\\documentclass[]{}": "ignore",
+        "\\cite{}": "dummy",
+        "\\cite[]{}": "dummy",
+        "\\crefformat{}{}": "dummy",
+        "\\crefmultiformat{}{}{}{}": "dummy",
+        "\\IEEEPARstart{}{}": "dummy",
+        "\\texorpdfstring{}{}": "dummy"
+    },
+}

@@ -1,0 +1,21 @@
+figure.figsize : 4, 3
+# figure.figsize : 3.6, 2.7
+
+font.size: 7
+font.serif : Times New Roman
+mathtext.fontset : stix
+
+axes.linewidth : 0.5
+grid.linewidth : 0.5
+lines.linewidth : 1.
+lines.markersize: 4
+
+xtick.major.size : 3
+xtick.minor.size : 1.5
+xtick.major.width : 0.5
+xtick.minor.width : 0.5
+
+ytick.major.size : 3
+ytick.minor.size : 1.5
+ytick.major.width : 0.5
+ytick.minor.width : 0.5

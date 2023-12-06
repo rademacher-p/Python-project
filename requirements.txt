@@ -1,0 +1,22 @@
+# extras
+tensorboard
+torch-tb-profiler
+PyQt5
+gymnasium
+tqdm
+types-tqdm
+PyYAML
+types-PyYAML
+ipywidgets
+ipykernel
+
+# dev
+black
+ruff
+mypy
+hatch
+pytest
+pytest-cov
+Sphinx
+furo
+ipython
