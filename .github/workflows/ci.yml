@@ -6,10 +6,10 @@ name: CI
 on:
   push:
     branches: ["main"]
-    paths: ["src/python_project/**"]
+    paths: ["src/python_project/**", "tests/**"]
   pull_request:
     branches: ["main"]
-    paths: ["src/python_project/**"]
+    paths: ["src/python_project/**", "tests/**"]
   workflow_dispatch:
 
 jobs:
