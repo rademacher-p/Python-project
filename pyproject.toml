@@ -9,7 +9,7 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
 ]
-dependencies = []
+dependencies = ["numpy"]
 description = "A template for Python project layout and configuration"
 name = "Python-project"
 readme = "README.md"
@@ -41,8 +41,8 @@ dev = [
 ]
 
 [project.urls]
-"Bug Tracker" = "https://github.com/rademacher-p/python-project/issues"
-"Homepage" = "https://github.com/rademacher-p/python-project"
+"Bug Tracker" = "https://github.com/rademacher-p/Python-project/issues"
+"Homepage" = "https://github.com/rademacher-p/Python-project"
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -56,7 +56,7 @@ packages = ["src/python_project"]
 [tool.hatch.envs.default]
 python = "3.11"
 features = ["dev"]
-post-install-commands = ["mypy --install-types"]
+post-install-commands = ["mypy src/", "mypy --install-types"]
 
 # [tool.hatch.envs.default.env-vars]
 # PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"
@@ -86,9 +86,7 @@ convention = "google"
 plugins = "numpy.typing.mypy_plugin"
 
 [[tool.mypy.overrides]]
-module = [
-    "python_project.*",
-]
+module = ["python_project.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

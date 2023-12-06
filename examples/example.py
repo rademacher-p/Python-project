@@ -1,3 +1,3 @@
-from python_project import say_hello
+from python_project import hello
 
-say_hello()
+hello()

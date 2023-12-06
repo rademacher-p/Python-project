@@ -2,7 +2,7 @@ version: "1.0"
 
 services:
   play:
-    image: python-project
+    image: Python-project
     container_name: play
     build:
       context: .
@@ -39,4 +39,4 @@ services:
         python -m pip install -e .[dev,extras]
         /bin/bash
 
-# docker run --rm -it --gpus=all --network=host --env DISPLAY=$DISPLAY --mount type=bind,source=$HOME/.Xauthority,target=/root/.Xauthority --env SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock --mount type=bind,source=$SSH_AUTH_SOCK,target=/run/host-services/ssh-auth.sock -v $PWD:/app python-project sh -c "git config --global --add safe.directory /app && zsh"
+# docker run --rm -it --gpus=all --network=host --env DISPLAY=$DISPLAY --mount type=bind,source=$HOME/.Xauthority,target=/root/.Xauthority --env SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock --mount type=bind,source=$SSH_AUTH_SOCK,target=/run/host-services/ssh-auth.sock -v $PWD:/app Python-project sh -c "git config --global --add safe.directory /app && zsh"

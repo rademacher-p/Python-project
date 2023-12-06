@@ -2,5 +2,5 @@ import python_project
 
 
 def test_true():
-    python_project.say_hello()
+    python_project.hello()
     assert True
