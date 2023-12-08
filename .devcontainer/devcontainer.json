@@ -2,6 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
 	"name": "Python-project",
+	// "image": "mcr.microsoft.com/devcontainers/python:3.11",
 	"build": {
 		// Sets the run context to one level up instead of the .devcontainer folder.
 		"context": "..",
@@ -20,7 +21,6 @@
 	"postCreateCommand": "python -m pip install -e .[dev]",
 
 	"runArgs": [
-		"--rm",
 		"--gpus=all"
 		// "--privileged",
 		// "--network=host",
