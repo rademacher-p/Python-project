@@ -1,0 +1,11 @@
+-r core.txt
+
+black
+ruff
+mypy
+hatch
+pytest
+pytest-cov
+Sphinx
+furo
+ipython
