@@ -1,9 +1,9 @@
 version: "1.0"
 
 services:
-  play:
-    image: Python-project
-    container_name: play
+  pyproject:
+    image: python-project
+    container_name: pyproject
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,19 +15,19 @@ services:
               count: all
               capabilities: [gpu]
     network_mode: host
-    environment:
-      SSH_AUTH_SOCK: /run/host-services/ssh-auth.sock
-      DISPLAY: $DISPLAY
+    # environment:
+    #   SSH_AUTH_SOCK: /run/host-services/ssh-auth.sock
+    #   DISPLAY: $DISPLAY
     volumes:
-      - type: bind
-        source: $SSH_AUTH_SOCK
-        target: /run/host-services/ssh-auth.sock
-      - type: bind
-        source: /tmp/.X11-unix
-        target: /tmp/.X11-unix
-      - type: bind
-        source: ~/.Xauthority
-        target: /root/.Xauthority
+      # - type: bind
+      #   source: $SSH_AUTH_SOCK
+      #   target: /run/host-services/ssh-auth.sock
+      # - type: bind
+      #   source: /tmp/.X11-unix
+      #   target: /tmp/.X11-unix
+      # - type: bind
+      #   source: ~/.Xauthority
+      #   target: /root/.Xauthority
       - type: bind
         source: ./
         target: /app
