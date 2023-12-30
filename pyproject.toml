@@ -56,7 +56,7 @@ packages = ["src/python_project"]
 [tool.hatch.envs.default]
 python = "3.11"
 features = ["dev"]
-post-install-commands = ["mypy src/", "mypy --install-types"]
+post-install-commands = ["pip install --upgrade pip", "mypy src/", "mypy --install-types"]
 
 # [tool.hatch.envs.default.env-vars]
 # PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"
