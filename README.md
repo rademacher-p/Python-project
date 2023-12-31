@@ -8,4 +8,11 @@
 [![codecov](https://codecov.io/github/rademacher-p/Python-project/graph/badge.svg?token=OKPQ9m3mQT)](https://codecov.io/github/rademacher-p/Python-project)
 <!-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6886844.svg)](https://doi.org/10.5281/zenodo.6886844) -->
 
+> **Note**: This project is under active development. :construction:
+
 A template for Python project layout and configuration.
+
+## Installation
+This package is developed for [Python](https://www.python.org/downloads/) 3.11+. Best practice is to first create a [virtual environment](https://docs.python.org/3/tutorial/venv.html). The package can be installed locally using `pip install <path>`, where `<path>` is the top-level directory containing `pyproject.toml`. Note that the [editable option](https://pip.pypa.io/en/stable/topics/local-project-installs/#editable-installs) can be included to track any package modifications. To install optional packages, specify the `extras` and/or `dev` [extras](https://peps.python.org/pep-0508/#extras), as exemplified [here](https://pip.pypa.io/en/stable/cli/pip_install/#examples).
+
+The project management tool [hatch](https://hatch.pypa.io/) is recommended to simplify local installation. Simply execute `hatch shell` to create and enter a virtual environment with the package installed in development mode (editable install plus extras).
