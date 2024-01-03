@@ -26,9 +26,6 @@ RUN python -m pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip
 # RUN python -m pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
 #     && rm -rf /tmp/pip-tmp
 
-# RUN python -m pip install matplotlib PyQt6
-# RUN python -m pip install torch
-
 WORKDIR /app
 # COPY . .
 
