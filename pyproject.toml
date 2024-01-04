@@ -29,6 +29,7 @@ extras = [
   "ipykernel",
 ]
 dev = [
+  "ipython",
   "black",
   "ruff",
   "mypy",
@@ -37,7 +38,6 @@ dev = [
   "pytest-cov",
   "Sphinx",
   "furo",
-  "ipython",
 ]
 
 [project.urls]

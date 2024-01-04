@@ -12,19 +12,22 @@ ENV PYTHONUNBUFFERED=1
 ENV PIP_ROOT_USER_ACTION=ignore
 
 #
-RUN apt-get -y update && apt-get -y upgrade
-RUN apt-get install -y libgl1 libegl1 libxkbcommon-x11-0 libdbus-1-3 \
-    libxcb-cursor0 libwayland-cursor0 libwayland-egl1
-
-RUN python -m pip install -U wheel setuptools pip
+RUN apt-get -y update && apt-get -y upgrade && apt-get install -y \
+    libgl1 \
+    libegl1 \
+    libxkbcommon-x11-0 \
+    libdbus-1-3 \
+    libxcb-cursor0 \
+    libwayland-cursor0 \
+    libwayland-egl1
 
 # Install pip requirements
-COPY requirements/ /tmp/pip-tmp/requirements/
-RUN python -m pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements/dev.txt \
+RUN python -m pip install -U wheel setuptools pip
+COPY requirements.txt requirements_dev.txt /tmp/pip-tmp/
+RUN python -m pip --disable-pip-version-check --no-cache-dir install \
+    -r /tmp/pip-tmp/requirements.txt \
+    -r /tmp/pip-tmp/requirements_dev.txt \
     && rm -rf /tmp/pip-tmp
-# COPY requirements.txt /tmp/pip-tmp/
-# RUN python -m pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-#     && rm -rf /tmp/pip-tmp
 
 WORKDIR /app
 # COPY . .

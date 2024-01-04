@@ -29,8 +29,7 @@ jobs:
           cache: "pip"
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+          python -m pip install -U pip
           python -m pip install -e .[dev]
       - name: Lint with ruff
         run: ruff --format=github src/python_project/
