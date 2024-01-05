@@ -1,3 +1,3 @@
-from python_project import hello
+from python_project import hello_world
 
-hello()
+hello_world()
