@@ -1,6 +1,6 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
-FROM mcr.microsoft.com/devcontainers/python:3.11
 # FROM python:3.11
+FROM mcr.microsoft.com/devcontainers/python:3.11
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -31,6 +31,7 @@ RUN python -m pip --disable-pip-version-check --no-cache-dir install \
 
 WORKDIR /app
 # COPY . .
+# RUN python -m pip install -e .[dev]
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers

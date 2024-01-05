@@ -1,9 +1,9 @@
 version: "1.0"
 
 services:
-  pyproject:
+  develop:
     image: python-project
-    container_name: pyproject
+    container_name: python-project-develop
     build:
       context: .
       dockerfile: Dockerfile
