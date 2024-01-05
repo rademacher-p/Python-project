@@ -67,6 +67,9 @@ post-install-commands = [
 # [tool.hatch.envs.default.env-vars]
 # PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"
 
+# [tool.black]
+# force-exclude = "src/_deprecated"
+
 [tool.ruff]
 src = ["src"]
 select = [
@@ -84,11 +87,14 @@ ignore = [
   "D1",   # missing docstrings
   "B905", # zip w/o explicit `strict=`
 ]
+# extend-exclude = ["src/_deprecated"]
+# force-exclude = true
 
 [tool.ruff.pydocstyle]
 convention = "google"
 
 [tool.mypy]
+# exclude = ["src/_deprecated"]
 plugins = "numpy.typing.mypy_plugin"
 
 [[tool.mypy.overrides]]
