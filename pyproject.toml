@@ -88,8 +88,8 @@ ignore = [
 [tool.ruff.pydocstyle]
 convention = "google"
 
-# [tool.mypy]
-# plugins = "numpy.typing.mypy_plugin"
+[tool.mypy]
+plugins = "numpy.typing.mypy_plugin"
 
 [[tool.mypy.overrides]]
 module = ["python_project.*"]
