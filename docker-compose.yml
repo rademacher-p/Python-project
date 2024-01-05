@@ -19,6 +19,9 @@ services:
     #   SSH_AUTH_SOCK: /run/host-services/ssh-auth.sock
     #   DISPLAY: $DISPLAY
     volumes:
+      - type: bind
+        source: ./
+        target: /app
       # - type: bind
       #   source: $SSH_AUTH_SOCK
       #   target: /run/host-services/ssh-auth.sock
@@ -28,15 +31,15 @@ services:
       # - type: bind
       #   source: ~/.Xauthority
       #   target: /root/.Xauthority
-      - type: bind
-        source: ./
-        target: /app
-    # command: sh -c "python -m pip install -e .[dev] && /bin/bash"
     entrypoint: ["/bin/sh","-c"]
     command:
       - |
-        git config --global --add safe.directory /app
         python -m pip install -e .[dev]
         /bin/bash
+    # command:
+    #   - |
+    #     git config --global --add safe.directory /app
+    #     python -m pip install -e .[dev]
+    #     /bin/bash
 
 # docker run --rm -it --gpus=all --network=host --env DISPLAY=$DISPLAY --mount type=bind,source=$HOME/.Xauthority,target=/root/.Xauthority --env SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock --mount type=bind,source=$SSH_AUTH_SOCK,target=/run/host-services/ssh-auth.sock -v $PWD:/app Python-project sh -c "git config --global --add safe.directory /app && zsh"
