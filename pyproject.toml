@@ -60,8 +60,8 @@ features = ["dev"]
 post-install-commands = [
   "pip install --upgrade pip",
   "pre-commit install",
-  "mypy src/",
-  "mypy --install-types",
+  "mypy . || true",
+  "mypy --install-types --non-interactive",
 ]
 
 # [tool.hatch.envs.default.env-vars]
