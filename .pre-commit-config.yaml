@@ -25,7 +25,7 @@ repos:
     rev: v1.8.0
     hooks:
       - id: mypy
-        additional_dependencies:
+        additional_dependencies:  # NOTE: include all project deps + typing stubs
           - "numpy"
         # exclude: src/_deprecated
         # entry: mypy .

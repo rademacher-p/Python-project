@@ -34,9 +34,7 @@ extras = [
   "torch-tb-profiler",
   "PyQt6",
   "tqdm",
-  "types-tqdm",
   "PyYAML",
-  "types-PyYAML",
   "ipywidgets",
   "ipykernel",
 ]
@@ -60,8 +58,7 @@ features = ["dev"]
 post-install-commands = [
   "pip install --upgrade pip",
   "pre-commit install",
-  "mypy . || true",
-  "mypy --install-types --non-interactive",
+  "mypy --install-types --non-interactive . || true",
 ]
 
 # [tool.hatch.envs.default.env-vars]
@@ -94,7 +91,7 @@ convention = "google"
 
 [tool.mypy]
 # exclude = ["src/_deprecated"]
-# ignore_missing_imports = true
+# explicit_package_bases = true
 plugins = "numpy.typing.mypy_plugin"
 
 [[tool.mypy.overrides]]
