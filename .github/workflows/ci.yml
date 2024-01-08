@@ -6,10 +6,10 @@ name: CI
 on:
   push:
     branches: ["main"]
-    paths: ["src/python_project/**", "tests/**"]
+    paths: ["src/**", "tests/**", "examples/**"]
   pull_request:
     branches: ["main"]
-    paths: ["src/python_project/**", "tests/**"]
+    paths: ["src/**", "tests/**", "examples/**"]
   workflow_dispatch:
 
 jobs:
@@ -29,13 +29,17 @@ jobs:
           cache: "pip"
       - name: Install dependencies
         run: |
-          python -m pip install -U pip
-          python -m pip install -e .[dev]
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install .
       - name: Lint with ruff
-        run: ruff --format=github src/python_project/
+        run: |
+          pip install ruff
+          ruff --output-format=github .
         continue-on-error: true
       - name: Run tests and collect coverage
-        run: pytest --cov=src/python_project/ --cov-report=xml:tests/coverage.xml
+        run: |
+          pip install pytest pytest-cov
+          pytest --cov=src/python_project/ --cov-report=xml:tests/coverage.xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
