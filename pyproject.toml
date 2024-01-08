@@ -26,17 +26,16 @@ dev = [
   "hatch",
   "pytest",
   "pytest-cov",
-  "Sphinx",
-  "furo",
 ]
 extras = [
+  "Sphinx",
+  "furo",
+  "ipykernel",
   "tensorboard",
   "torch-tb-profiler",
   "PyQt6",
-  "tqdm",
   "PyYAML",
-  "ipywidgets",
-  "ipykernel",
+  "tqdm",
 ]
 
 [project.urls]
