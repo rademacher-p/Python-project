@@ -42,8 +42,8 @@ extras = [
 "Bug Tracker" = "https://github.com/rademacher-p/Python-project/issues"
 "Homepage" = "https://github.com/rademacher-p/Python-project"
 
-[tool.hatch.metadata]
-allow-direct-references = true
+# [tool.hatch.metadata]
+# allow-direct-references = true
 
 [tool.hatch.build]
 ignore-vcs = true
@@ -59,12 +59,13 @@ post-install-commands = [
   "pre-commit install",
   "mypy --install-types --non-interactive . || true",
 ]
+# skip-install = true  # for non-package projects
 
 # [tool.hatch.envs.default.env-vars]
 # PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"
 
 # [tool.black]
-# extend-exclude = "src/_deprecated"
+# extend-exclude = "(_deprecated|src/_deprecated)/.*\\.py"
 
 [tool.ruff]
 src = ["src"]
