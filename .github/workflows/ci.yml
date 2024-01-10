@@ -38,14 +38,18 @@ jobs:
         continue-on-error: true
       - name: Run tests and collect coverage
         run: |
-          pip install pytest pytest-cov
-          pytest --cov=src/python_project/ --cov-report=xml:tests/coverage.xml
+          pip install pytest pytest-xdist pytest-cov
+          pytest
+      # - name: Run tests and collect coverage
+      #   run: |
+      #     pip install pytest pytest-xdist pytest-cov
+      #     pytest --cov=src/python_project/ --cov-report=xml:tests/coverage.xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
-        with:
-          # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: tests/coverage.xml # optional
-          # flags: unittests # optional
-          # name: codecov-umbrella # optional
-          fail_ci_if_error: true # optional (default = false)
-          # verbose: true # optional (default = false)
+        # with:
+        #   # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+        #   files: tests/coverage.xml # optional
+        #   # flags: unittests # optional
+        #   # name: codecov-umbrella # optional
+        #   fail_ci_if_error: true # optional (default = false)
+        #   # verbose: true # optional (default = false)

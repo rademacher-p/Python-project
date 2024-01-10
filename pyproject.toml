@@ -26,6 +26,7 @@ dev = [
   "hatch",
   "pytest",
   "pytest-cov",
+  "pytest-xdist",
 ]
 extras = [
   "Sphinx",
@@ -97,7 +98,13 @@ module = ["python_project.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
-addopts = ["--cov=src/python_project"]
+addopts = [
+  "--import-mode=importlib",
+  "--numprocesses=auto",
+  "--cov=src/python_project",
+  # "--cov-report=html:tests/htmlcov",
+  # "--cov-report=xml:tests/coverage.xml",
+]
 filterwarnings = ["ignore::DeprecationWarning"]
 testpaths = ["tests/"]
 
