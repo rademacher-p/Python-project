@@ -1,4 +1,3 @@
-from . import hello
-from .hello import hello_world
+from .hello import hello_world, say_hello
 
-__all__ = ["hello", "hello_world"]
+__all__ = ["say_hello", "hello_world"]
