@@ -55,11 +55,9 @@ packages = ["src/python_project"]
 python = "3.11"
 features = ["dev"]
 post-install-commands = [
-  "pip install --upgrade pip",
   "pre-commit install",
   "mypy --install-types --non-interactive . || true",
 ]
-# skip-install = true  # for non-package projects
 
 # [tool.hatch.envs.default.env-vars]
 # PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"

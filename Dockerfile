@@ -22,7 +22,7 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get install -y \
     libwayland-egl1
 
 # Install pip requirements
-RUN python -m pip install -U wheel setuptools pip
+RUN python -m pip install --upgrade wheel setuptools pip
 COPY requirements.txt requirements-dev.txt /tmp/pip-tmp/
 RUN python -m pip --disable-pip-version-check --no-cache-dir install \
     -r /tmp/pip-tmp/requirements.txt \
