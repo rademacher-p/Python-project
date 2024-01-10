@@ -1,11 +1,16 @@
-import python_project
+from python_project import hello
 
 
 def test_true():
-    python_project.hello_world()
+    hello.hello_world()
     assert True
 
 
 def test_false():
-    python_project.hello_world()
+    hello.hello_world()
     assert not False
+
+
+def test_hello():
+    name = "you"
+    assert hello.say_hello(name) == f"Hello, {name}!"

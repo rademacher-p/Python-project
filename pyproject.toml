@@ -110,3 +110,5 @@ testpaths = ["tests/"]
 
 [tool.coverage.run]
 data_file = "tests/.coverage"
+concurrency = ["multiprocessing"]
+parallel = true
