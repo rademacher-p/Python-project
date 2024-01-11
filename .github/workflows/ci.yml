@@ -39,7 +39,7 @@ jobs:
       - name: Run tests and collect coverage
         run: |
           pip install pytest pytest-cov
-          pytest -c NUL
+          pytest -c NUL --cov=src/python_project
       # - name: Run tests and collect coverage
       #   run: |
       #     pip install pytest pytest-xdist pytest-cov
