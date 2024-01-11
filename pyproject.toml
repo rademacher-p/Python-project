@@ -102,7 +102,7 @@ addopts = [
   "--import-mode=importlib",
   "--cov=src/python_project",
   # "--cov-report=html:tests/htmlcov",
-  # "--cov-report=xml:tests/coverage.xml",
+  "--cov-report=xml:tests/coverage.xml",
   "--numprocesses=auto",
 ]
 filterwarnings = ["ignore::DeprecationWarning"]
