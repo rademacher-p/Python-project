@@ -101,7 +101,6 @@ ignore_missing_imports = true
 addopts = [
   "--import-mode=importlib",
   "--cov=src/python_project",
-  # "--cov-report=html:tests/htmlcov",
   "--cov-report=xml:tests/coverage.xml",
   "--numprocesses=auto",
 ]
@@ -110,5 +109,3 @@ testpaths = ["tests/"]
 
 [tool.coverage.run]
 data_file = "tests/.coverage"
-# concurrency = ["multiprocessing"]
-# parallel = true
