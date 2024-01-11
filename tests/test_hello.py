@@ -11,6 +11,6 @@ def test_false():
     assert not False
 
 
-def test_hello():
+def test_hello_you():
     name = "you"
     assert say_hello(name) == f"Hello, {name}!"

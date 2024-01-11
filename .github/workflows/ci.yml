@@ -38,9 +38,8 @@ jobs:
         continue-on-error: true
       - name: Run tests and collect coverage
         run: |
-          pip install pytest pytest-xdist pytest-cov
-          export COVERAGE_PROCESS_START=tests/.coveragerc
-          pytest
+          pip install pytest pytest-cov
+          pytest --numprocesses=0
       # - name: Run tests and collect coverage
       #   run: |
       #     pip install pytest pytest-xdist pytest-cov
