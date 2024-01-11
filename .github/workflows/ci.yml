@@ -39,7 +39,7 @@ jobs:
       - name: Run tests and collect coverage
         run: |
           pip install pytest pytest-cov
-          pytest --numprocesses=0
+          pytest -c NUL
       # - name: Run tests and collect coverage
       #   run: |
       #     pip install pytest pytest-xdist pytest-cov

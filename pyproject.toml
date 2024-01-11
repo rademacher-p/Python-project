@@ -100,10 +100,10 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 addopts = [
   "--import-mode=importlib",
-  "--numprocesses=auto",
   "--cov=src/python_project",
   # "--cov-report=html:tests/htmlcov",
   # "--cov-report=xml:tests/coverage.xml",
+  "--numprocesses=auto",
 ]
 filterwarnings = ["ignore::DeprecationWarning"]
 testpaths = ["tests/"]
