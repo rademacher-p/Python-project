@@ -27,6 +27,7 @@ dev = [
   "pytest",
   "pytest-cov",
   "pytest-xdist",
+  # TODO: types
 ]
 extras = [
   "Sphinx",
@@ -98,14 +99,14 @@ module = ["python_project.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
+testpaths = ["tests/"]
 addopts = [
   "--import-mode=importlib",
   "--cov=src/python_project",
   "--cov-report=xml:tests/coverage.xml",
   "--numprocesses=auto",
 ]
-filterwarnings = ["ignore::DeprecationWarning"]
-testpaths = ["tests/"]
+# filterwarnings = ["ignore::DeprecationWarning"]
 
 [tool.coverage.run]
 data_file = "tests/.coverage"
