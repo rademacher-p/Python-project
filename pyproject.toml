@@ -27,8 +27,8 @@ dev = [
   "pytest",
   "pytest-cov",
   "pytest-xdist",
-  # TODO: types
 ]
+typing = []  # TODO
 extras = [
   "Sphinx",
   "furo",
