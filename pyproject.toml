@@ -103,6 +103,7 @@ testpaths = ["tests/"]
 addopts = [
   "--import-mode=importlib",
   "--cov=src/python_project",
+  "--cov-report=term",
   "--cov-report=xml:tests/coverage.xml",
   "--numprocesses=auto",
 ]
