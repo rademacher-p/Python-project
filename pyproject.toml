@@ -28,7 +28,8 @@ dev = [
   "pytest-cov",
   "pytest-xdist",
 ]
-typing = []  # TODO
+typing = []  # TODO: make separate dev/test/docs/etc hatch envs
+docs = []
 extras = [
   "Sphinx",
   "furo",
