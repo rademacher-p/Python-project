@@ -54,10 +54,10 @@ packages = ["src/python_project"]
 
 [tool.hatch.envs.default]
 python = "3.11"
+pre-install-commands = ["pip install --upgrade pip"]
 
 [tool.hatch.envs.dev]
 features = ["dev"]
-# pre-install-commands = ["pip install --upgrade pip"]
 post-install-commands = [
   "pre-commit install",
   "mypy --install-types --non-interactive . || true",
@@ -66,8 +66,8 @@ post-install-commands = [
 [tool.hatch.envs.docs]
 features = ["docs"]
 
-# [too.hatch.envs.docs.scripts]  # TODO
-# build = "sphinx-build -M html docs/source/ docs/build/"
+[tool.hatch.envs.docs.scripts]
+build = "sphinx-build -M html docs/source/ docs/build/"
 
 # [tool.hatch.envs.default.env-vars]
 # PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"
