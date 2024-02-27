@@ -20,7 +20,7 @@ pre-commit install
 mypy --install-types --non-interactive .
 ```
 
-The project management tool [hatch](https://hatch.pypa.io/) is recommended to simplify local installation. Simply execute `hatch shell` to create and enter a virtual environment with the package installed in development mode (editable install plus extras). Post-install commands (for `pre-commit`, `mypy`, etc.) are executed automatically.
+The project management tool [hatch](https://hatch.pypa.io/) is recommended to simplify local installation. Simply execute `hatch -e dev shell` to create and enter a virtual environment with the package installed in development mode (editable install plus extras). Post-install commands (for `pre-commit`, `mypy`, etc.) are executed automatically.
 
 
 <!-- This code is developed for [Python](https://www.python.org/downloads/) 3.11+. Best practice is to first create a [virtual environment](https://docs.python.org/3/tutorial/venv.html). The commands below should be executed on new environments from the repository top-level, installing development dependencies, activating formatting/linting [hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks), and supporting [static typing](https://mypy.readthedocs.io/en/stable/index.html):
@@ -31,7 +31,7 @@ pre-commit install
 mypy --install-types --non-interactive .
 ```
 
-The project management tool [hatch](https://hatch.pypa.io/) is recommended to simplify local installation. Simply execute `hatch shell` to create and enter a virtual environment with the development dependencies installed. Post-install commands (for `pre-commit`, `mypy`, etc.) are executed automatically. -->
+The project management tool [hatch](https://hatch.pypa.io/) is recommended to simplify local installation. Simply execute `hatch -e dev shell` to create and enter a virtual environment with the development dependencies installed. Post-install commands (for `pre-commit`, `mypy`, etc.) are executed automatically. -->
 
 
 <!-- The package can then be installed directly from GitHub using

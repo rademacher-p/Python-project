@@ -6,10 +6,11 @@
             "source.organizeImports": "always"
             // "source.fixAll": "always",
         },
-        "editor.rulers": [
-            88
-        ],
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        // "editor.rulers": [
+        //     88
+        // ],
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        // "editor.defaultFormatter": "charliermarsh.ruff",
     },
     "mypy-type-checker.preferDaemon": false,
     "python.testing.pytestEnabled": true,
