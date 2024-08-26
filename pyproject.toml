@@ -79,7 +79,10 @@ build = "sphinx-build -M html docs/source/ docs/build/"
 
 [tool.ruff]
 src = ["src"]
-lint.select = [
+# extend-exclude = ["src/_deprecated"]
+
+[tool.ruff.lint]
+select = [
   "F",   # pyflakes
   "E",   # pycodestyle
   "W",   # pycodestyle
@@ -91,14 +94,11 @@ lint.select = [
   "UP",  # pyupgrade
   "NPY", # NumPy
 ]
-lint.ignore = [
+ignore = [
   "D1",   # missing docstrings
   "B905", # zip w/o explicit `strict=`
 ]
-# extend-exclude = ["src/_deprecated"]
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"
+pydocstyle.convention = "google"
 
 [tool.mypy]
 # exclude = ["src/_deprecated"]
