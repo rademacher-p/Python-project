@@ -15,7 +15,7 @@ dependencies = ["numpy"]
 description = "A template for Python project layout and configuration"
 name = "Python-project"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 version = "0.0.1"
 
 [project.optional-dependencies]
@@ -69,7 +69,8 @@ post-install-commands = [
 features = ["docs"]
 
 [tool.hatch.envs.docs.scripts]
-build = "sphinx-build -M html docs/source/ docs/build/"
+sphinx_html = "sphinx-build -M html docs/source/ docs/build/"
+sphinx_api = "sphinx-apidoc -f -o docs/source src/mlx"
 
 # [tool.hatch.envs.default.env-vars]
 # PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"
@@ -78,7 +79,7 @@ build = "sphinx-build -M html docs/source/ docs/build/"
 # extend-exclude = "(_deprecated|src/_deprecated)/.*\\.py"
 
 [tool.ruff]
-src = ["src"]
+src = ["src", "tests"]
 # extend-exclude = ["src/_deprecated"]
 
 [tool.ruff.lint]
@@ -98,12 +99,18 @@ ignore = [
   "D1",   # missing docstrings
   "B905", # zip w/o explicit `strict=`
 ]
-pydocstyle.convention = "google"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pycodestyle]
+ignore-overlong-task-comments = true
 
 [tool.mypy]
-# exclude = ["src/_deprecated"]
+# exclude = ["tmp/", "_deprecated/"]
 # explicit_package_bases = true
 plugins = "numpy.typing.mypy_plugin"
+
 
 [[tool.mypy.overrides]]
 module = ["python_project.*"]

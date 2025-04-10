@@ -19,6 +19,8 @@ extensions = [
     "sphinx.ext.imgmath",
 ]
 
+# autoclass_content = "both"
+# autodoc_typehints = "description"
 # autodoc_default_options = {"special-members": "__call__"}
 # autodoc_member_order = "bysource"
 
