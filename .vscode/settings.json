@@ -7,11 +7,19 @@
             // "source.fixAll": "explicit",
         },
         "editor.defaultFormatter": "charliermarsh.ruff",
-        // "editor.defaultFormatter": "ms-python.black-formatter",
     },
+    // "python.analysis.languageServerMode": "full",
     // "python.analysis.typeCheckingMode": "basic",
     "python.analysis.diagnosticMode": "workspace",
-    // "python.analysis.autoImportCompletions": true,
+    // "python.analysis.autoImportCompletions": false,
+    // "python.analysis.showOnlyDirectDependenciesInAutoImport": false,
+    "python.analysis.packageIndexDepths": [
+        {
+            "name": "",
+            "depth": 2,
+            "includeAllSymbols": false
+        }
+    ],
     "python.testing.pytestEnabled": true,
     "autoDocstring.docstringFormat": "google",
     // "mypy-type-checker.preferDaemon": true,

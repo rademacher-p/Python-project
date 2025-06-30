@@ -3,7 +3,7 @@
         // General
         "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-vscode.live-server",
-        "ms-vsliveshare.vsliveshare",
+        // "ms-vsliveshare.vsliveshare",
         // Editing
         "visualstudioexptteam.vscodeintellicode",
         "albert.tabout",
@@ -16,10 +16,10 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-python.debugpy",
-        "charliermarsh.ruff",
         // "ms-python.black-formatter",
         // "ms-python.mypy-type-checker",
         "matangover.mypy",
+        "charliermarsh.ruff",
         "njpwerner.autodocstring",
         "ms-toolsai.jupyter",
         "ms-toolsai.tensorboard",

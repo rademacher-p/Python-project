@@ -15,31 +15,22 @@ dependencies = ["numpy"]
 description = "A template for Python project layout and configuration"
 name = "Python-project"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 version = "0.0.1"
 
 [project.optional-dependencies]
 dev = [
   "ipython",
-  "black",
   "ruff",
   "mypy",
-  "pre-commit",
-  "hatch",
   "pytest",
   "pytest-cov",
   "pytest-xdist",
+  "pre-commit",
+  "hatch",
 ]
 typing = [] # TODO: per extras set?
-docs = ["Sphinx", "furo"]
-extras = [
-  "ipykernel",
-  "tensorboard",
-  "torch-tb-profiler",
-  "PyQt6",
-  "PyYAML",
-  "tqdm",
-]
+docs = ["Sphinx", "furo", "sphinx-book-theme"]
 
 [project.urls]
 "Bug Tracker" = "https://github.com/rademacher-p/Python-project/issues"
@@ -55,11 +46,11 @@ packages = ["src/python_project"]
 # bypass-selection = true
 
 [tool.hatch.envs.default]
-python = "3.11"
+python = "3.13"
 pre-install-commands = ["pip install --upgrade pip"]
 
 [tool.hatch.envs.dev]
-features = ["dev"]
+features = ["dev", "typing"]
 post-install-commands = [
   "pre-commit install",
   "mypy --install-types --non-interactive . || true",
@@ -70,7 +61,7 @@ features = ["docs"]
 
 [tool.hatch.envs.docs.scripts]
 sphinx_html = "sphinx-build -M html docs/source/ docs/build/"
-sphinx_api = "sphinx-apidoc -f -o docs/source src/mlx"
+sphinx_api = "sphinx-apidoc -f -o docs/source src/python_project"
 
 # [tool.hatch.envs.default.env-vars]
 # PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"
@@ -79,7 +70,7 @@ sphinx_api = "sphinx-apidoc -f -o docs/source src/mlx"
 # extend-exclude = "(_deprecated|src/_deprecated)/.*\\.py"
 
 [tool.ruff]
-src = ["src", "tests"]
+src = ["src", "tests", "examples"]
 # extend-exclude = ["src/_deprecated"]
 
 [tool.ruff.lint]
@@ -106,11 +97,9 @@ convention = "google"
 [tool.ruff.lint.pycodestyle]
 ignore-overlong-task-comments = true
 
-[tool.mypy]
+# [tool.mypy]
 # exclude = ["tmp/", "_deprecated/"]
 # explicit_package_bases = true
-plugins = "numpy.typing.mypy_plugin"
-
 
 [[tool.mypy.overrides]]
 module = ["python_project.*"]
@@ -123,9 +112,9 @@ addopts = [
   "--cov=src/python_project",
   "--cov-report=term",
   "--cov-report=xml:tests/coverage.xml",
-  "--numprocesses=auto",
+  # "--numprocesses=auto",
 ]
-# filterwarnings = ["ignore::DeprecationWarning"]
+filterwarnings = ["ignore::DeprecationWarning:python_project.*"]
 
 [tool.coverage.run]
 data_file = "tests/.coverage"
