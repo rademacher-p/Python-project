@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build>=0.9.4,<0.10.0"]
+build-backend = "uv_build"
 
 [project]
 authors = [
@@ -19,59 +19,35 @@ requires-python = ">=3.13"
 version = "0.0.1"
 
 [project.optional-dependencies]
-dev = [
-  "ipython",
-  "ruff",
-  "mypy",
-  "pytest",
-  "pytest-cov",
-  "pytest-xdist",
-  "pre-commit",
-  "hatch",
-]
-typing = [] # TODO: per extras set?
-docs = ["Sphinx", "furo", "sphinx-book-theme"]
+plot = ["matplotlib", "PyQt5"]
 
 [project.urls]
 "Bug Tracker" = "https://github.com/rademacher-p/Python-project/issues"
 "Homepage" = "https://github.com/rademacher-p/Python-project"
 
-# [tool.hatch.metadata]
-# allow-direct-references = true
-
-[tool.hatch.build]
-packages = ["src/python_project"]
-
-# [tool.hatch.build.targets.wheel]
-# bypass-selection = true
-
-[tool.hatch.envs.default]
-python = "3.13"
-pre-install-commands = ["pip install --upgrade pip"]
-
-[tool.hatch.envs.dev]
-features = ["dev", "typing"]
-post-install-commands = [
-  "pre-commit install",
-  "mypy --install-types --non-interactive . || true",
+[dependency-groups]
+dev = [
+  "ipython",
+  "pre-commit",
+  { include-group = "lint" },
+  { include-group = "test" },
+  { include-group = "typing" },
 ]
+lint = ["ruff", "mypy"]
+test = ["pytest", "pytest-cov", "pytest-xdist"]
+typing = []
+docs = ["Sphinx", "furo", "sphinx-book-theme"]
 
-[tool.hatch.envs.docs]
-features = ["docs"]
-
-[tool.hatch.envs.docs.scripts]
-sphinx_html = "sphinx-build -M html docs/source/ docs/build/"
-sphinx_api = "sphinx-apidoc -f -o docs/source src/python_project"
-
-# [tool.hatch.envs.default.env-vars]
-# PIP_EXTRA_INDEX_URL = "https://download.pytorch.org/whl/cu118"
-
-# [tool.black]
-# extend-exclude = "(_deprecated|src/_deprecated)/.*\\.py"
+# [tool.hatch.envs.dev.scripts]
+# sphinx_html = "sphinx-build -M html docs/source/ docs/build/"
+# sphinx_api = "sphinx-apidoc -f -o docs/source src/mlx"
 
 [tool.ruff]
 src = ["src", "tests", "examples"]
 # extend-exclude = ["src/_deprecated"]
+
+[tool.ruff.format]
+skip-magic-trailing-comma = true
 
 [tool.ruff.lint]
 select = [
@@ -90,6 +66,9 @@ ignore = [
   "D1",   # missing docstrings
   "B905", # zip w/o explicit `strict=`
 ]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"

@@ -1,6 +1,6 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
-# FROM python:3.11
-FROM mcr.microsoft.com/devcontainers/python:3.11
+# FROM python:3.13
+FROM mcr.microsoft.com/devcontainers/python:3.13
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1

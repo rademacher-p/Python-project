@@ -13,11 +13,7 @@ author = "Paul Rademacher"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-    "sphinx.ext.autodoc",
-    "sphinx.ext.napoleon",
-    "sphinx.ext.imgmath",
-]
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon", "sphinx.ext.imgmath"]
 
 # autoclass_content = "both"
 # autodoc_typehints = "description"

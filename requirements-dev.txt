@@ -1,9 +1,0 @@
-ipython
-black
-ruff
-mypy
-pre-commit
-hatch
-pytest
-pytest-cov
-pytest-xdist
