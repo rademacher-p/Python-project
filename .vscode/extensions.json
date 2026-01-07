@@ -3,7 +3,6 @@
         // General
         "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-vscode.live-server",
-        // "ms-vsliveshare.vsliveshare",
         // Editing
         "albert.tabout",
         "Gruntfuggly.todo-tree",
@@ -15,10 +14,8 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-python.debugpy",
-        // "ms-python.black-formatter",
-        // "ms-python.mypy-type-checker",
-        "matangover.mypy",
         "charliermarsh.ruff",
+        "astral-sh.ty",
         "njpwerner.autodocstring",
         "ms-toolsai.jupyter",
         "ms-toolsai.tensorboard",

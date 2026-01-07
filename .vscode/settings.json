@@ -8,23 +8,23 @@
         },
         "editor.defaultFormatter": "charliermarsh.ruff",
     },
+    "python.languageServer": "None", // for ty
+    "ty.inlayHints.variableTypes": false,
+    "ty.inlayHints.callArgumentNames": false,
+    "ty.diagnosticMode": "workspace",
+    //
     // "python.analysis.languageServerMode": "full",
     // "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.diagnosticMode": "workspace",
+    // "python.analysis.diagnosticMode": "workspace",
     // "python.analysis.autoImportCompletions": false,
     // "python.analysis.showOnlyDirectDependenciesInAutoImport": false,
-    "python.analysis.packageIndexDepths": [
-        {
-            "name": "",
-            "depth": 2,
-            "includeAllSymbols": false
-        }
-    ],
+    // "python.analysis.packageIndexDepths": [
+    //     {
+    //         "name": "",
+    //         "depth": 2,
+    //         "includeAllSymbols": false
+    //     }
+    // ],
     "python.testing.pytestEnabled": true,
     "autoDocstring.docstringFormat": "google",
-    // "mypy-type-checker.preferDaemon": true,
-    // "mypy-type-checker.args": [
-    //     "--enable-incomplete-feature=NewGenericSyntax"
-    // ],
-    "mypy.runUsingActiveInterpreter": true,
 }

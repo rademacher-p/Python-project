@@ -2,6 +2,9 @@
 # See https://pre-commit.com/hooks.html for more hooks
 default_install_hook_types:
   - pre-commit
+  - post-checkout
+  - post-merge
+  - post-rewrite
   # - pre-push
   # - pre-merge-commit
 default_language_version:
@@ -15,27 +18,24 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.4
+    rev: 0.9.22
     hooks:
       - id: uv-lock
+      - id: uv-sync
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.13.2
+    rev: v0.14.10
     hooks:
       - id: ruff-check
         args: [--fix]
       - id: ruff-format
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.18.2
+  - repo: local
     hooks:
-      - id: mypy
-        additional_dependencies: # NOTE: include all project deps + typing stubs
-          - "numpy"
-        # exclude: (_deprecated|src/_deprecated)/.*\.py
-        # exclude: |
-        #     (?x)^(
-        #         path/to/file1.py|
-        #         path/to/file2.py|
-        #         path/to/file3.py
-        #     )$
-        # entry: mypy .
-        # pass_filenames: false
+      - id: ty-check
+        name: ty check
+        description: "Run `ty check` for Python type checking"
+        entry: uv run ty check --force-exclude
+        language: python
+        types_or: [python, pyi, jupyter]
+        require_serial: true
+        additional_dependencies: []
+        pass_filenames: false

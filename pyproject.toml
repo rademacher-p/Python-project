@@ -27,13 +27,14 @@ plot = ["matplotlib", "PyQt5"]
 
 [dependency-groups]
 dev = [
+  "python_project[plot]",
   "ipython",
   "pre-commit",
   { include-group = "lint" },
   { include-group = "test" },
   { include-group = "typing" },
 ]
-lint = ["ruff", "mypy"]
+lint = ["ruff", "ty"]
 test = ["pytest", "pytest-cov", "pytest-xdist"]
 typing = []
 docs = ["Sphinx", "furo", "sphinx-book-theme"]
@@ -76,13 +77,11 @@ convention = "google"
 [tool.ruff.lint.pycodestyle]
 ignore-overlong-task-comments = true
 
-# [tool.mypy]
-# exclude = ["tmp/", "_deprecated/"]
-# explicit_package_bases = true
+[tool.ty.src]
+exclude = ["tmp/"]
 
-[[tool.mypy.overrides]]
-module = ["python_project.*"]
-ignore_missing_imports = true
+# [tool.ty.rules]
+# unresolved-import = "ignore"
 
 [tool.pytest.ini_options]
 testpaths = ["tests/"]
