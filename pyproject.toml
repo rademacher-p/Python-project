@@ -1,5 +1,5 @@
 [build-system]
-requires = ["uv_build>=0.9.4,<0.10.0"]
+requires = ["uv_build>=0.11.0,<0.12"]
 build-backend = "uv_build"
 
 [project]
@@ -8,9 +8,9 @@ authors = [
 ]
 classifiers = [
   "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
 ]
+license = "MIT"
 dependencies = ["numpy"]
 description = "A template for Python project layout and configuration"
 name = "Python-project"
@@ -19,7 +19,7 @@ requires-python = ">=3.13"
 version = "0.0.1"
 
 [project.optional-dependencies]
-plot = ["matplotlib", "PyQt5"]
+plot = ["matplotlib", "PyQt6"]
 
 [project.urls]
 "Bug Tracker" = "https://github.com/rademacher-p/Python-project/issues"
@@ -43,9 +43,16 @@ docs = ["Sphinx", "furo", "sphinx-book-theme"]
 # sphinx_html = "sphinx-build -M html docs/source/ docs/build/"
 # sphinx_api = "sphinx-apidoc -f -o docs/source src/mlx"
 
+# [tool.uv]
+# package = false
+
+# [tool.uv.sources]
+# yuzu = { workspace = true }
+
 [tool.ruff]
 src = ["src", "tests", "examples"]
 # extend-exclude = ["src/_deprecated"]
+# namespace-packages = []
 
 [tool.ruff.format]
 skip-magic-trailing-comma = true
@@ -81,6 +88,8 @@ ignore-overlong-task-comments = true
 exclude = ["tmp/"]
 
 # [tool.ty.rules]
+# unused-ignore-comment = "ignore"
+# unused-type-ignore-comment = "ignore"
 # unresolved-import = "ignore"
 
 [tool.pytest.ini_options]
