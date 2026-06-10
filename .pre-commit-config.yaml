@@ -29,14 +29,7 @@ repos:
       - id: ruff-check
         args: [--fix]
       - id: ruff-format
-  - repo: local
+  - repo: https://github.com/astral-sh/ty-pre-commit
+    rev: v0.0.47
     hooks:
-      - id: ty-check
-        name: ty check
-        description: "Run `ty check` for Python type checking"
-        entry: uv run ty check --force-exclude
-        language: python
-        types_or: [python, pyi, jupyter]
-        require_serial: true
-        additional_dependencies: []
-        pass_filenames: false
+      - id: ty
