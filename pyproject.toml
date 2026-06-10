@@ -29,7 +29,7 @@ plot = ["matplotlib", "PyQt6"]
 dev = [
   "python_project[plot]",
   "ipython",
-  "pre-commit",
+  "prek",
   { include-group = "lint" },
   { include-group = "test" },
   { include-group = "typing" },
