@@ -1,5 +1,5 @@
 [build-system]
-requires = ["uv_build>=0.11.0,<0.12"]
+requires = ["uv_build>=0.11.0,<0.13"]
 build-backend = "uv_build"
 
 [project]
@@ -58,7 +58,7 @@ src = ["src", "tests", "examples"]
 skip-magic-trailing-comma = true
 
 [tool.ruff.lint]
-select = [
+extend-select = [
   "F",   # pyflakes
   "E",   # pycodestyle
   "W",   # pycodestyle
@@ -71,8 +71,7 @@ select = [
   "NPY", # NumPy
 ]
 ignore = [
-  "D1",   # missing docstrings
-  "B905", # zip w/o explicit `strict=`
+  "D1", # missing docstrings
 ]
 
 [tool.ruff.lint.isort]
@@ -84,13 +83,16 @@ convention = "google"
 [tool.ruff.lint.pycodestyle]
 ignore-overlong-task-comments = true
 
-[tool.ty.src]
-exclude = ["tmp/"]
+[tool.ruff.lint.flake8-comprehensions]
+allow-dict-calls-with-keyword-arguments = true
 
 # [tool.ty.rules]
 # unused-ignore-comment = "ignore"
 # unused-type-ignore-comment = "ignore"
 # unresolved-import = "ignore"
+
+[tool.ty.src]
+exclude = ["tmp/"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests/"]
