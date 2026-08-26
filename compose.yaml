@@ -1,0 +1,82 @@
+services:
+  dev:
+    # Build the image from the Dockerfile in the current directory
+    build: .
+
+    # Run as root during development so the environment is mutable
+    # Alternatively, you could set `UV_PROJECT_ENVIRONMENT` to a path owned by the non-root user
+    # user: root
+    user: "${UID}:${GID}"
+
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+      - type: volume
+        target: /app/.venv
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    command: bash
+
+## docker build -t pypr .
+## docker run --rm -v .:/app -v /app/.venv -it -u $(id -u):$(id -g) --gpus all pypr bash
+
+## docker compose run --rm -u $(id -u):$(id -g) dev
+## UID=$(id -u) GID=$(id -g) docker compose run --rm dev
+
+
+###
+
+
+# version: "1.0"
+
+# services:
+#   dev:
+#     image: python-project
+#     container_name: python-project-dev
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     deploy:
+#       resources:
+#         reservations:
+#           devices:
+#             - driver: nvidia
+#               count: all
+#               capabilities: [gpu]
+#     network_mode: host
+#     # environment:
+#     #   SSH_AUTH_SOCK: /run/host-services/ssh-auth.sock
+#     #   DISPLAY: $DISPLAY
+#     volumes:
+#       - type: bind
+#         source: ./
+#         target: /app
+#       # - type: bind
+#       #   source: $SSH_AUTH_SOCK
+#       #   target: /run/host-services/ssh-auth.sock
+#       # - type: bind
+#       #   source: /tmp/.X11-unix
+#       #   target: /tmp/.X11-unix
+#       # - type: bind
+#       #   source: ~/.Xauthority
+#       #   target: /root/.Xauthority
+#     entrypoint: ["/bin/sh","-c"]
+#     command:
+#       - |
+#         python -m pip install -e .[dev]
+#         /bin/bash
+#     # command:
+#     #   - |
+#     #     git config --global --add safe.directory /app
+#     #     python -m pip install -e .[dev]
+#     #     /bin/bash
+
+# # docker run --rm -it --gpus=all --network=host --env DISPLAY=$DISPLAY --mount type=bind,source=$HOME/.Xauthority,target=/root/.Xauthority --env SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock --mount type=bind,source=$SSH_AUTH_SOCK,target=/run/host-services/ssh-auth.sock -v $PWD:/app Python-project sh -c "git config --global --add safe.directory /app && zsh"
