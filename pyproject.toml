@@ -48,6 +48,13 @@ docs = ["Sphinx", "furo", "sphinx-book-theme"]
 
 # [tool.uv.sources]
 # yuzu = { workspace = true }
+# yuzu = { path = "lib/Yuzu/src/yuzu", editable = true }
+
+# [tool.uv.workspace]
+# members = ["src/*"]
+
+# [tool.uv.build-backend]
+# module-name = "yuzu.core"  # for namespace packages
 
 [tool.ruff]
 src = ["src", "tests", "examples"]
