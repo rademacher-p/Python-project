@@ -1,6 +1,6 @@
 figure.figsize : 5.2, 3.9
 # figure.figsize : 4.8, 3.6
-# figure.autolayout : True
+figure.constrained_layout.use : True
 
 savefig.bbox : tight
 savefig.pad_inches : 0.05
