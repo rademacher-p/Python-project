@@ -34,15 +34,12 @@ dev = [
   { include-group = "lint" },
   { include-group = "test" },
   { include-group = "typing" },
+  { include-group = "docs" },
 ]
 lint = ["ruff", "ty"]
 test = ["pytest", "pytest-cov", "pytest-xdist"]
 typing = []
 docs = ["Sphinx", "furo", "sphinx-book-theme"]
-
-# [tool.hatch.envs.dev.scripts]
-# sphinx_html = "sphinx-build -M html docs/source/ docs/build/"
-# sphinx_api = "sphinx-apidoc -f -o docs/source src/mlx"
 
 # [tool.uv]
 # package = false
@@ -105,9 +102,11 @@ exclude = ["tmp/"]
 [tool.pytest.ini_options]
 testpaths = ["tests/"]
 addopts = [
+  "--q",
+  # "--tb=short",
   "--import-mode=importlib",
   "--cov=src/python_project",
-  "--cov-report=term",
+  # "--cov-report=term",
   "--cov-report=xml:tests/coverage.xml",
   # "--numprocesses=auto",
 ]

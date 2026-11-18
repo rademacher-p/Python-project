@@ -1128,6 +1128,7 @@ plot = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "furo" },
     { name = "ipykernel" },
     { name = "ipython" },
     { name = "prek" },
@@ -1136,6 +1137,8 @@ dev = [
     { name = "pytest-xdist" },
     { name = "python-project", extra = ["plot"] },
     { name = "ruff" },
+    { name = "sphinx" },
+    { name = "sphinx-book-theme" },
     { name = "ty" },
 ]
 docs = [
@@ -1163,6 +1166,7 @@ provides-extras = ["plot"]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "furo" },
     { name = "ipykernel" },
     { name = "ipython" },
     { name = "prek" },
@@ -1171,6 +1175,8 @@ dev = [
     { name = "pytest-xdist" },
     { name = "python-project", extras = ["plot"] },
     { name = "ruff" },
+    { name = "sphinx" },
+    { name = "sphinx-book-theme" },
     { name = "ty" },
 ]
 docs = [

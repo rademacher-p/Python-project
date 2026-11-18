@@ -1,0 +1,17 @@
+// Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
+[
+  {
+    "label": "Sphinx: Build HTML",
+    "command": "sphinx-build",
+    "args": ["-M", "html", "docs/source", "docs/build"],
+    "reveal": "always",
+    "hide": "on_success"
+  },
+  {
+    "label": "Sphinx: API doc",
+    "command": "sphinx-apidoc",
+    "args": ["-f", "-o", "docs/source", "src/python_project"], // --implicit-namespaces
+    "reveal": "always",
+    "hide": "on_success"
+  }
+]

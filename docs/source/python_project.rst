@@ -9,13 +9,13 @@ python\_project.hello module
 
 .. automodule:: python_project.hello
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: python_project
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
