@@ -13,18 +13,20 @@
 A template for Python project layout and configuration.
 
 ## Installation
+
 > The project management tool [uv](https://docs.astral.sh/uv/) is recommended! Simply use `uv run <path>` to run code with fast, automatic virtual environment synchronization :rocket:
 
 This package is developed for [Python](https://www.python.org/downloads/) 3.13+. Best practice is to first create a [virtual environment](https://docs.python.org/3/tutorial/venv.html). The package can be installed locally using `pip install <path>`, where `<path>` is the top-level directory containing `pyproject.toml`. To install optional packages, specify [extras](https://peps.python.org/pep-0508/#extras), as exemplified [here](https://pip.pypa.io/en/stable/cli/pip_install/#examples).
 
 ### Developers
+
 Developers should install the package with the [editable option](https://pip.pypa.io/en/stable/topics/local-project-installs/#editable-installs) to track any modifications. Additionally, commands should be run to activate formatting/linting [git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks). The following setup is recommended for new environments:
+
 ```shell
 pip install --upgrade pip
 pip install -e <path>[dev]
 prek install
 ```
-
 
 <!-- The package can then be installed directly from GitHub using
 ```

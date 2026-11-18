@@ -29,6 +29,7 @@ plot = ["matplotlib", "PyQt6"]
 dev = [
   "python_project[plot]",
   "ipython",
+  "ipykernel",
   "prek",
   { include-group = "lint" },
   { include-group = "test" },
